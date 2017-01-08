@@ -112,7 +112,7 @@ What will the value of `charles.homePlanet` be after the above code run? What ab
 
 // ANSWER:  the value of charles.homeplanet continues to be Pluto. The value changes to Jupiter for charlesFromJupiter.homePlanet, since a struct assigns values to the copies of that struct and changing the value of the struct doesn't affect the copies and vicecversa.
 
-### Question 7
+### Question 7   fff
 
 Here's a struct that represents a bank account:
 

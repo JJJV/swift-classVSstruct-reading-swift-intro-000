@@ -43,10 +43,13 @@ fred.name = "Brick"
 fred.weight = 999.2
 fred.homePlanet = "Mars"
 ```
+// ANSWER: It will not run, because being a class you are not allowed to change the let HomePlanet, it is stablished as a constant.
 
 ### Question 2
 
 Can you fix the class definition above so that it _does_ work?
+
+change let homePlanet: String to var homePlanet: String
 
 ### Question 3
 
@@ -74,9 +77,12 @@ bilbo.height = 1.42
 bilbo.homePlanet = "Saturn"
 ```
 
+// ANSWER: It will not run since the instance cannot be a constant Let
 ### Question 4
 
 Can you change the declaration of `bilbo` so that the above three lines of code _do_ work?
+
+// ANSWER: change let to var in bilbo definition
 
 ### Question 5
 
@@ -90,6 +96,8 @@ jason.name = "Jason"
 
 What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
 
+// ANSWER.  the name will be Jason, since a class is pointing to the same place but it allows to change the content of that placeholder
+
 ### Question 6
 
 Given this bit of code that uses the `Alien` struct:
@@ -101,6 +109,8 @@ charlesFromJupiter.homePlanet = "Jupiter"
 ```
 
 What will the value of `charles.homePlanet` be after the above code run? What about the value of `charlesFromJupiter.homePlanet`? Why?
+
+// ANSWER:  the value of charles.homeplanet continues to be Pluto. The value changes to Jupiter for charlesFromJupiter.homePlanet, since a struct assigns values to the copies of that struct and changing the value of the struct doesn't affect the copies and vicecversa.
 
 ### Question 7
 
@@ -123,9 +133,13 @@ struct BankAccount {
 
 Does this code work? Why or why not?
 
+// ANSWER:  Both functions need to be declared as mutating in oder to change the value for variable balance
+
 ### Question 8
 
 Can you fix the `BankAccount` struct so it _does_ work?
+
+// ANSWER: See previous answer
 
 ### Question 9
 
@@ -138,6 +152,8 @@ joeAccount.withdraw(50.0)
 ```
 
 What will the value of `joeAccount.balance` be after the above code runs? What about the value of `joeOtherAccount.balance`? Why?
+
+// ANSWER: the value of joeAccount.balance is 50, and the value of `joeOtherAccount.balance' of is 100.  After the copy is made values assigned to the original struct do not transfer.
 
 ### Question 10
 
@@ -168,5 +184,7 @@ library2.add(track: "Come As You Are")
 ```
 
 After this code runs, what are the contents of `library1.tracks`? What about the contents of `library2.tracks`? Why?
+
+// ANSWER:  3 songs will be in library1 and all 3 songs will be on library2.  the tracks added to library 2 will go to the same place holder library1 is pointing to. Because a class is a REFERENCE type, unlike struct which is a VALUE type.
 
 <a href='https://learn.co/lessons/ClassesVsStructs' data-visibility='hidden'>View this lesson on Learn.co</a>
